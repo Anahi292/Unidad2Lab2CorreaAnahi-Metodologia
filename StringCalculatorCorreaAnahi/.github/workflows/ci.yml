@@ -22,8 +22,12 @@ jobs:
     
     - name: List files (debug)
       run: |
+        echo "=== Contenido del directorio raiz ==="
         ls -la
+        echo "=== Buscando pom.xml ==="
         find . -name "pom.xml"
+        echo "=== Estructura de carpetas ==="
+        tree -L 3 || find . -type d -maxdepth 3
         
     - name: Build and test with Maven
       run: mvn -B clean test
