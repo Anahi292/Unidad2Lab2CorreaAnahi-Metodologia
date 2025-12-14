@@ -19,6 +19,11 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
+    
+    - name: List files (debug)
+      run: |
+        ls -la
+        find . -name "pom.xml"
         
     - name: Build and test with Maven
       run: mvn -B clean test
